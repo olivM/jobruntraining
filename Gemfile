@@ -6,6 +6,7 @@ gem 'rails', '3.2.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
+gem 'bootstrap-sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,3 +44,5 @@ gem "jquery-rails"
 gem "bson_ext"
 gem "mongoid", ">= 2.0.0.beta.19"
 gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
+
+gem "devise"
