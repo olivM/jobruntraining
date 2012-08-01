@@ -5,7 +5,7 @@ class UserFatigue
   field :fatigue, type: String
 
   def pretty
-  	"#{self.date} #{self.fatigue}"
+  	"#{self.fatigue} (#{self.fatigue})"
   end
 
 end

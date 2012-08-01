@@ -5,7 +5,7 @@ class UserWeight
   field :weight, type: Float
 
   def pretty
-  	"#{self.date} : #{self.weight}"
+  	"#{self.weight} (#{self.weight})"
   end
 
 end

@@ -59,5 +59,9 @@ class User
     self.user_fatigues.last.weight unless self.user_fatigues.last.nil?
   end
 
+  def pretty
+    "#{self.first_name} #{self.last_name}"
+  end
+
 end
 

@@ -6,7 +6,8 @@ class FatigueController < ApplicationController
   		redirect_to '/'
   	else
 
-  		true
+  		@user = User.first
+  		@user_weight = UserWeight.new
 
   	end
 
