@@ -47,4 +47,17 @@ class User
   embeds_many :user_weights
   accepts_nested_attributes_for :user_weights
 
+  embeds_many :user_fatigues
+  accepts_nested_attributes_for :user_fatigues
+
+  has_and_belongs_to_many :events
+
+  def current_weight
+    self.user_weights.last.weight unless self.user_weights.last.nil?
+  end
+  def current_fatigue
+    self.user_fatigues.last.weight unless self.user_fatigues.last.nil?
+  end
+
 end
+

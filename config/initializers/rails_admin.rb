@@ -34,7 +34,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = []
 
   # Add models here if you want to go 'whitelist mode':
-  # config.included_models = []
+  config.included_models = ["User", "Event"]
 
   # Application wide tried label methods for models' instances
   # config.label_methods << :description # Default is [:name, :title]
@@ -77,6 +77,43 @@ RailsAdmin.config do |config|
 
   # Your model's configuration, to help you get started:
 
+  config.compact_show_view = false
+
   # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible. (visible(true))
+
+  config.model User do
+    list do
+      field :first_name
+      field :last_name
+
+      field :current_weight
+      field :current_fatigue
+
+    end
+
+    edit do 
+      field :first_name
+      field :last_name
+      field :email
+      field :user_weights
+      field :user_fatigues
+      field :events
+    end
+  end
+
+  config.model UserWeight do
+    object_label_method :pretty
+    base do
+      field :date
+      field :weight
+    end
+  end
+  config.model UserFatigue do
+    object_label_method :pretty
+    base do
+      field :date
+      field :weight
+    end
+  end
 
 end

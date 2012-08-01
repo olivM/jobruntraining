@@ -1,4 +1,9 @@
 Jobruntraining::Application.routes.draw do
+  
+  match '/fatigue/new/:key' => 'fatigue#new'
+  match '/fatigue/create/:key' => 'fatigue#create'
+  match '/fatigue/show/:key' => 'fatigue#show'
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
