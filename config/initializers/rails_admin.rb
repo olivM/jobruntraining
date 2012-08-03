@@ -82,12 +82,15 @@ RailsAdmin.config do |config|
   # All fields marked as 'hidden' won't be shown anywhere in the rails_admin unless you mark them as visible. (visible(true))
 
   config.model User do
+    object_label_method :pretty
     list do
       field :first_name
       field :last_name
 
       field :current_weight
       field :current_fatigue
+
+      field :test_link_fatigue
 
     end
 

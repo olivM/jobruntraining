@@ -63,5 +63,9 @@ class User
     "#{self.first_name} #{self.last_name}"
   end
 
+  def test_link_fatigue
+    "/fatigue/new/#{Base64::encode64([self.email.to_s, Date.today.to_s].join('/'))}"
+  end
+
 end
 
