@@ -6,9 +6,10 @@ class FatigueController < ApplicationController
   		redirect_to '/'
   	else
 
-      [user_id, date] = Base64::decode64(params[:key]).split('/')
+      email = Base64::decode64(params[:key]).split('/')[0]
+      @date = Base64::decode64(params[:key]).split('/')[1]
 
-  		@user = User.find(user_id)
+  		@user = User.where(email: email).first
   		@user_weight = UserWeight.new
 
   	end

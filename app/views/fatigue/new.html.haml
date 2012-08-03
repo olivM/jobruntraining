@@ -1,6 +1,10 @@
 %h1= "Hi #{@user.pretty}"
 %h2 How are you today ?
 = form_tag  :module => :fatigue, :action => :new do
+	%p
+		= @email
+	%p
+		= @date
 	%p 
 		= select_tag(:fatigue, options_for_select([["Good", 'good'], ["Medium", 'medium'], ["Bad", 'bad']]) )
 	= submit_tag "Submit"

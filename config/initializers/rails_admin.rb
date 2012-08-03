@@ -91,8 +91,22 @@ RailsAdmin.config do |config|
       field :current_fatigue
 
       field :test_link_fatigue
-
     end
+
+    show do
+      field :first_name
+      field :last_name
+      field :email
+
+      field :current_weight
+      field :current_fatigue
+
+      field :test_link_fatigue
+
+      field :user_weights
+      field :user_fatigues
+      field :events
+    end      
 
     edit do 
       field :first_name
