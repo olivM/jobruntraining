@@ -11,10 +11,11 @@ class Reminder < ActionMailer::Base
 
     @event = event
 
+    @link = "toto"
+
     mail to: user.email
   end
 
   handle_asynchronously :fatigue
-
 
 end
