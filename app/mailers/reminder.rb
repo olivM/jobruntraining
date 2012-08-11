@@ -1,14 +1,20 @@
 class Reminder < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "reminder@jobruntraining.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.reminder.fatigue.subject
   #
-  def fatigue
-    @greeting = "Hi"
+  def fatigue(user, event)
+    @greeting = "Hi #{user.first_name}"
 
-    mail to: "to@example.org"
+    @event = event
+
+    mail to: user.email
   end
+
+  handle_asynchronously :fatigue
+
+
 end

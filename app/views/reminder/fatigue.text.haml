@@ -1,3 +1,6 @@
-Reminder#fatigue
 
-= @greeting + ", find me in app/views/reminder/fatigue.text.haml"
+= @greeting 
+
+= "please fill your fatigue after " + @event.title + "(#{@event.date})"
+
+= link_to @link
