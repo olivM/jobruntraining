@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/sferik/rails_admin.git
-  revision: 662ec1466a4110c6fcac9c166aa2b38ed4b24853
+  revision: 83b9dba880a59e26e872620350cf4fe323041427
   specs:
     rails_admin (0.0.5)
       bbenezech-nested_form (~> 0.0.6)
@@ -16,6 +16,12 @@ GIT
       remotipart (~> 1.0)
       sass-rails (~> 3.1)
 
+GIT
+  remote: git://github.com/thedarkone/rails-dev-boost.git
+  revision: 10ca96bfa7a65577a65f55cc18de83a72402139e
+  specs:
+    rails-dev-boost (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -23,12 +29,12 @@ GEM
       Platform (>= 0.4.0)
       open4
     Platform (0.4.0)
-    actionmailer (3.2.7)
-      actionpack (= 3.2.7)
+    actionmailer (3.2.8)
+      actionpack (= 3.2.8)
       mail (~> 2.4.4)
-    actionpack (3.2.7)
-      activemodel (= 3.2.7)
-      activesupport (= 3.2.7)
+    actionpack (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
       journey (~> 1.0.4)
@@ -36,20 +42,21 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.3)
-    activemodel (3.2.7)
-      activesupport (= 3.2.7)
+    activemodel (3.2.8)
+      activesupport (= 3.2.8)
       builder (~> 3.0.0)
-    activerecord (3.2.7)
-      activemodel (= 3.2.7)
-      activesupport (= 3.2.7)
+    activerecord (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activeresource (3.2.7)
-      activemodel (= 3.2.7)
-      activesupport (= 3.2.7)
-    activesupport (3.2.7)
+    activeresource (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
+    activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.2)
     arel (3.0.2)
     bbenezech-nested_form (0.0.6)
     bcrypt-ruby (3.0.1)
@@ -71,6 +78,7 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     erubis (2.7.0)
+    excon (0.15.5)
     execjs (1.4.0)
       multi_json (~> 1.0)
     haml (3.1.6)
@@ -79,6 +87,14 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
+    heroku (2.30.2)
+      heroku-api (~> 0.3.2)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.5)
+      rest-client (~> 1.6.1)
+      rubyzip
+    heroku-api (0.3.2)
+      excon (~> 0.15.5)
     hike (1.2.1)
     hpricot (0.8.6)
     i18n (0.6.0)
@@ -96,20 +112,23 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    launchy (2.1.2)
+      addressable (~> 2.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
-    mongoid (3.0.3)
+    mongoid (3.0.4)
       activemodel (~> 3.1)
       moped (~> 1.1)
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
     moped (1.2.0)
     multi_json (1.3.6)
+    netrc (0.7.5)
     open4 (1.3.0)
-    origin (1.0.4)
+    origin (1.0.6)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -122,17 +141,17 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
-    rails (3.2.7)
-      actionmailer (= 3.2.7)
-      actionpack (= 3.2.7)
-      activerecord (= 3.2.7)
-      activeresource (= 3.2.7)
-      activesupport (= 3.2.7)
+    rails (3.2.8)
+      actionmailer (= 3.2.8)
+      actionpack (= 3.2.8)
+      activerecord (= 3.2.8)
+      activeresource (= 3.2.8)
+      activesupport (= 3.2.8)
       bundler (~> 1.0)
-      railties (= 3.2.7)
-    railties (3.2.7)
-      actionpack (= 3.2.7)
-      activesupport (= 3.2.7)
+      railties (= 3.2.8)
+    railties (3.2.8)
+      actionpack (= 3.2.8)
+      activesupport (= 3.2.8)
       rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
@@ -141,7 +160,10 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     remotipart (1.0.2)
-    sass (3.1.20)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rubyzip (0.9.9)
+    sass (3.2.0)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -156,7 +178,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.33)
-    uglifier (1.2.6)
+    uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
     warden (1.2.1)
@@ -174,10 +196,12 @@ DEPENDENCIES
   devise
   haml (>= 3.0.0)
   haml-rails
+  heroku
   jammit
   jquery-rails
-  mongoid (>= 2.0.0.beta.19)
-  rails (= 3.2.7)
+  mongoid (>= 3.0.0)
+  rails (= 3.2.8)
+  rails-dev-boost!
   rails_admin!
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

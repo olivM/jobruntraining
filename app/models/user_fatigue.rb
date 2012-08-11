@@ -8,4 +8,8 @@ class UserFatigue
   	"#{self.fatigue} (#{self.fatigue})"
   end
 
+  def fatigue_enum
+  	['dead', 'tired', 'ok', 'fit', 'over the top']
+  end
+
 end

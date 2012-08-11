@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :development do
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+end
 
 gem 'bootstrap-sass'
 
@@ -42,7 +45,14 @@ gem "haml-rails"
 gem "jammit"
 gem "jquery-rails"
 gem "bson_ext"
-gem "mongoid", ">= 2.0.0.beta.19"
+gem "mongoid", ">= 3.0.0"
 gem "rails_admin", :git => "git://github.com/sferik/rails_admin.git"
 
 gem "devise"
+
+gem "heroku"
+
+
+gem 'delayed_job_mongoid'
+
+

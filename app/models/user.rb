@@ -1,71 +1,68 @@
 class User
-  include Mongoid::Document
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+	include Mongoid::Document
+	# Include default devise modules. Others available are:
+	# :token_authenticatable, :confirmable,
+	# :lockable, :timeoutable and :omniauthable
+	devise :database_authenticatable, :registerable,
+				 :recoverable, :rememberable, :trackable, :validatable
 
-  field :first_name
-  field :last_name
+	field :first_name
+	field :last_name
 
-  ## Database authenticatable
-  field :email,              :type => String, :default => ""
-  field :encrypted_password, :type => String, :default => ""
+	field :imported, :type => Boolean, :default => false
 
-  validates_presence_of :email
-  validates_presence_of :encrypted_password
-  
-  ## Recoverable
-  field :reset_password_token,   :type => String
-  field :reset_password_sent_at, :type => Time
+	## Database authenticatable
+	field :email,              :type => String, :default => ""
+	field :encrypted_password, :type => String, :default => ""
 
-  ## Rememberable
-  field :remember_created_at, :type => Time
+	validates_presence_of :email
+	validates_presence_of :encrypted_password
 
-  ## Trackable
-  field :sign_in_count,      :type => Integer, :default => 0
-  field :current_sign_in_at, :type => Time
-  field :last_sign_in_at,    :type => Time
-  field :current_sign_in_ip, :type => String
-  field :last_sign_in_ip,    :type => String
+	## Recoverable
+	field :reset_password_token,   :type => String
+	field :reset_password_sent_at, :type => Time
 
-  ## Confirmable
-  # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
-  # field :confirmation_sent_at, :type => Time
-  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
+	## Rememberable
+	field :remember_created_at, :type => Time
 
-  ## Lockable
-  # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
-  # field :locked_at,       :type => Time
+	## Trackable
+	field :sign_in_count,      :type => Integer, :default => 0
+	field :current_sign_in_at, :type => Time
+	field :last_sign_in_at,    :type => Time
+	field :current_sign_in_ip, :type => String
+	field :last_sign_in_ip,    :type => String
 
-  ## Token authenticatable
-  # field :authentication_token, :type => String
+	## Confirmable
+	# field :confirmation_token,   :type => String
+	# field :confirmed_at,         :type => Time
+	# field :confirmation_sent_at, :type => Time
+	# field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
-  embeds_many :user_weights
-  accepts_nested_attributes_for :user_weights
+	## Lockable
+	# field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
+	# field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
+	# field :locked_at,       :type => Time
 
-  embeds_many :user_fatigues
-  accepts_nested_attributes_for :user_fatigues
+	## Token authenticatable
+	# field :authentication_token, :type => String
 
-  has_and_belongs_to_many :events
+	embeds_many :user_weights
+	accepts_nested_attributes_for :user_weights
 
-  def current_weight
-    self.user_weights.last.weight unless self.user_weights.last.nil?
-  end
-  def current_fatigue
-    self.user_fatigues.last.weight unless self.user_fatigues.last.nil?
-  end
+	embeds_many :user_fatigues
+	accepts_nested_attributes_for :user_fatigues
 
-  def pretty
-    "#{self.first_name} #{self.last_name}"
-  end
+	has_and_belongs_to_many :events
 
-  def test_link_fatigue
-    "/fatigue/new/#{Base64::encode64([self.email.to_s, Date.today.to_s].join('/'))}"
-  end
+	def current_weight
+		self.user_weights.last.weight unless self.user_weights.last.nil?
+	end
+	def current_fatigue
+		self.user_fatigues.last.weight unless self.user_fatigues.last.nil?
+	end
+
+	def pretty
+		"#{self.first_name} #{self.last_name}"
+	end
 
 end
-

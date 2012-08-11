@@ -90,7 +90,6 @@ RailsAdmin.config do |config|
       field :current_weight
       field :current_fatigue
 
-      field :test_link_fatigue
     end
 
     show do
@@ -101,10 +100,9 @@ RailsAdmin.config do |config|
       field :current_weight
       field :current_fatigue
 
-      field :test_link_fatigue
-
       field :user_weights
       field :user_fatigues
+
       field :events
     end      
 
@@ -112,9 +110,6 @@ RailsAdmin.config do |config|
       field :first_name
       field :last_name
       field :email
-      field :user_weights
-      field :user_fatigues
-      field :events
     end
   end
 
@@ -131,6 +126,27 @@ RailsAdmin.config do |config|
       field :date
       field :weight
     end
+  end
+
+  config.model Event do
+    list do
+      field :title
+      field :date
+    end
+    show do
+      field :title
+      field :date
+      field :users
+    end
+    edit do
+      field :title
+      field :date
+      field :users
+      field :send_reminder
+    end
+    configure :users do
+      inverse_of :events
+    end 
   end
 
 end
